@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% load widget_tweaks %}
+{% block content %}
+
+    <form method="post">
+        {% csrf_token %}
+        <div class="w-50 d-flex flex-column mx-auto mt-2">
+            {% render_field form.name|add_class:"form-control" placeholder="Item Name" %}
+            {% render_field form.item_count|add_class:"form-control mt-2" %}
+        </div>
+        <button class="btn btn-success mt-3 d-block mx-auto" type="submit">Save</button>
+    </form>
+
+{% endblock content %}
